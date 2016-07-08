@@ -32,7 +32,9 @@
         "league/html-to-markdown": "^4.2",
         "league/glide": "^1.0",
         "league/iso3166": "^1.0",
-        "league/json-guard": "^0.3.1"
+        "league/json-guard": "^0.3.1",
+        "league/monga": "^1.2",
+        "omnipay/omnipay": "~2.0"
     },
     "autoload":{
         "files": ["App/Helper.php"],
