@@ -17,7 +17,19 @@
         "grace/pack": "v1.0.1.x-dev",
 	    "smarty/smarty": "~3.1",
         "michelf/php-markdown": "1.6.0",
-        "erusev/parsedown": "^1.6"
+        "erusev/parsedown": "^1.6",
+        "league/booboo": "^1.0",
+        "league/climate": "^3.2",
+        "league/color-extractor": "0.3.*",
+        "league/commonmark": "0.11",
+        "league/container": "^2.2",
+        "league/csv": "8.0",
+        "league/event": "^2.1",
+        "league/factory-muffin": "~2.0",
+        "league/flysystem": "^1.0",
+        "league/fractal": "^0.13.0",
+        "league/geotools": "@stable",
+        "league/glide": "^1.0"
     },
     "autoload":{
         "files": ["App/Helper.php"],
