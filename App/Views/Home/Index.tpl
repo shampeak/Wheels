@@ -79,15 +79,12 @@
             <a class="navbar-brand" href="javascript:void(0)">
                 <img alt="Brand" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAUCAYAAABiS3YzAAAACXBIWXMAAAsTAAALEwEAmpwYAAABNmlDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjarY6xSsNQFEDPi6LiUCsEcXB4kygotupgxqQtRRCs1SHJ1qShSmkSXl7VfoSjWwcXd7/AyVFwUPwC/0Bx6uAQIYODCJ7p3MPlcsGo2HWnYZRhEGvVbjrS9Xw5+8QMUwDQCbPUbrUOAOIkjvjB5ysC4HnTrjsN/sZ8mCoNTIDtbpSFICpA/0KnGsQYMIN+qkHcAaY6addAPAClXu4vQCnI/Q0oKdfzQXwAZs/1fDDmADPIfQUwdXSpAWpJOlJnvVMtq5ZlSbubBJE8HmU6GmRyPw4TlSaqo6MukP8HwGK+2G46cq1qWXvr/DOu58vc3o8QgFh6LFpBOFTn3yqMnd/n4sZ4GQ5vYXpStN0ruNmAheuirVahvAX34y/Axk/96FpPYgAAACBjSFJNAAB6JQAAgIMAAPn/AACA6AAAUggAARVYAAA6lwAAF2/XWh+QAAACRUlEQVR42ozUSWjWVxQF8F+SzwETq0RRCVVxFimFgtPCgIKLGogUaQzdOGAQSl0pboq0UCgUQQiCA4q4MLoSWxXcqcVGi4IWSgsOdUCjEmfj0MjXJm7OBx8x0Vz48+e9d98dzjn3VWw/0mgAa8AqHMVhFLP/OdbgOA72d7GASvT0c3YKtViA0fgL0/EZfsOJgaopoAkdONvnrBttCb4DO9GOr5MApqAXt7Keh9qqZc2zmtCC4biCIahKwnUJ8iLVPUcjxuImlgSWDqzFZnQXsA3/YCnmYBxe4g7q8R/+xFVMwngsx6dJPgErMBMH8EshVbThGDZgPYbhEvbiOmZhcaprxcf4BvNzf0/WHSVMS9aFn/AKX+ExvsC9JGjHGHyJiemgHfuigmI5UeXWk1Zn4xo+wVxMLmN/Iv7A3+GhvTygyKmvTcW0nJ3G/jDckv8hnAzuM/K9I6mhAbsLz4JRZVodgU5cQDXOxWdSCP0//kJqERcrE6ARP4aAp3gQ54pcrgrGNZFTMT6dGInV2JJkxUJEfjJS+T5Oo/AGT6KE2lTdE+Kqg3d9oDqDraUBKhF1Gd9hITZFr8NxI63fRx1e52xeOnyBn7H7feyfx5H8X2VK6oLlmyhhAn4NYQ1RyXvZr4tGi9iFlZHSRjTjdlTwbYbi0UAPSt9H5PfSZOShaA3Oc7J/PWfFPIn/fijokwDem3UF7uIHLAokH+FhJqqrv0r7tt8b7fWUrYXtmkzbQx+wSoOzsRndmsE4Dzboszx9rwfj/HYAl92e7KDhDE4AAAAASUVORK5CYII=">
             </a>
-            <a class="navbar-brand" href="javascript:void(0)"> 后台管理 </a>
+            <a class="navbar-brand" href="javascript:void(0)"> 轮子 </a>
 
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="?z=admin/user"><i class="icon-home icon-white"></i>用户管理</a></li>
-                <li><a href="?z=admin/diaocha/"><i class="icon-th icon-white"></i>调查问卷</a></li>
-                <li><a href="?z=admin/zhishi"><i class="icon-lock icon-white"></i>知识问答</a></li>
-                <li><a href="?z=admin/yc/"><i class="icon-th icon-white"></i>远程数据</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -100,53 +97,6 @@
 <div class="col-sm-12 col-lg-12">
 
 
-<h4><strong>用户管理</strong></h4>
-
-<a class="shambox" rel="?z=admin/user/add">添加用户</a>
-
-
-<table class="display" id="dt1">
-<thead>
-<tr>
-    <th width="90">序号</th>
-    <th width="150">姓名</th>
-    <th width="180">手机号</th>
-    <th>密码</th>
-    <th>code</th>
-    <th>url</th>
-    <th width="90">性别</th>
-    <th>公司</th>
-    <th>职位</th>
-    <th>微信号</th>
-    <th width="220">操作</th>
-</tr>
-</thead>
-<tbody>
-{foreach from=$res item=$value}
-<tr>
-    <td>{$value['uid']}</td>
-    <td>{$value['name']}</td>
-    <td>{$value['mobile']}</td>
-    <td>{$value['mima']}</td>
-    <td>{$value['code']}</td>
-    <td><a href="http://jifen.netconcepts.cn/?code={$value['code']}" target="_blank">http://jifen.netconcepts.cn/?code={$value['code']}</a></td>
-    
-    <td>{if $value['gender'] eq 1}男{else}女{/if}</td>
-    <td>{$value['company']}</td>
-    <td>{$value['title']}</td>
-    <td>{$value['weixin']}</td>
-    <td>
-<a class="shambox" rel="?z=admin/user/edit&uid={$value['uid']}">用户信息</a>
-<!-- a class="shamboxl" rel="/admin/userzhishi?uid={$value['uid']}">知识</a>
-<a class="shamboxl" rel="/admin/userdiaocha?uid={$value['uid']}">调查</a>
-<a class="shamboxl" rel="/admin/userjifen?uid={$value['uid']}">积分</a -->
-<a class="formact" relid="{$value['uid']}" act="delete" confirm="确定?">删除</a>
-
-    </td>
-</tr>
-{/foreach}
-</tbody>
-</table><!--/END SECOND TABLE -->
 
 </div><!--/span12 -->
 </div><!-- /row -->
